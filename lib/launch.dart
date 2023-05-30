@@ -18,7 +18,19 @@ class launch extends StatelessWidget {
       ),
       body: Container(
         height: ht,
-        width: ht,
+        width: ht,  
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors:[
+              Color.fromARGB(255, 42, 11, 96),
+              Color.fromARGB(255, 106, 15, 139),
+            ],
+
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight
+            
+            )
+        ),
       ),
     );
   }
