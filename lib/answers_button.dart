@@ -24,7 +24,7 @@ class answerButton extends StatelessWidget {
 
 
       ),
-      child: Text(answerTtext),
+      child: Text(answerTtext,textAlign: TextAlign.center,),
       
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class launch extends StatelessWidget {
   static const routename = '/launch';
@@ -35,9 +36,9 @@ class launch extends StatelessWidget {
             height: ht * 0.03,
           ),
 
-          const Text(
+          Text(
             "Quiz App",
-            style: TextStyle(
+            style: GoogleFonts.lato(
               fontSize: 30,
               color: Colors.white,
               fontWeight: FontWeight.bold,

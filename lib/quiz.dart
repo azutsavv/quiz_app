@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/question_scree.dart';
 import 'launch.dart';
 
@@ -14,6 +15,7 @@ class Quiz extends StatefulWidget {
 // turnary operator and assigning a string instead of widget.
 
 class _QuizState extends State<Quiz> {
+  List<String> selectedAnswer = [];
   var activescreen = "launch";
 
   // @override
@@ -26,6 +28,17 @@ class _QuizState extends State<Quiz> {
     setState(() {
       activescreen = "question-screen";
     });
+  }
+
+  void chooseAnswer(String answer) {
+    selectedAnswer.add(answer);
+
+    if (selectedAnswer.length == qestoins.length) {
+      setState(() {
+        selectedAnswer = [];
+        activescreen = "launch";
+      });
+    }
   }
 
   @override
@@ -44,9 +57,9 @@ class _QuizState extends State<Quiz> {
             Color.fromARGB(255, 42, 11, 96),
             Color.fromARGB(255, 106, 15, 139),
           ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
-          child: activescreen == "launch" 
+          child: activescreen == "launch"
               ? launch(switchscreen)
-              : const question_screen(),
+              : question_screen(onSelectAnswer: chooseAnswer),
         ),
       ),
     );
